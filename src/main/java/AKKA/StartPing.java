@@ -9,7 +9,7 @@ import com.typesafe.config.ConfigFactory;
 public class StartPing {
     public static void main(String[] args) {
         // Criação de um Actor System, container Akka.
-        ActorSystem system = ActorSystem.create("OiSistema", ConfigFactory.load("akka:/OiSistema@10.0.0.1:25520/user/AtorPing"));
+        ActorSystem system = ActorSystem.create("ActorSystem");
         // Criando o ator ping
         ActorRef actorRef = system.actorOf(Props.create(AtorPing.class), "Ping");
         // Enviando a mensagem ao ator
